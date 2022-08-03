@@ -48,8 +48,8 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  width: 102%;
-  height: 102%;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   box-sizing: border-box;
   z-index: 0;

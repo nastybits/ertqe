@@ -5,3 +5,42 @@ body {
   margin: 0;
   padding: 0;
 }
+
+// Анимации появление/скрытия блоков
+.sb-slide-left-enter-active,
+.sb-slide-left-leave-active,
+.sb-slide-right-enter-active,
+.sb-slide-right-leave-active,
+.sb-slide-up-enter-active,
+.sb-slide-up-leave-active,
+.sb-slide-down-enter-active,
+.sb-slide-down-leave-active,
+.sb-fade-enter-active,
+.sb-fade-leave-active {
+  transition: 1s;
+}
+
+.sb-fade-enter,
+.sb-fade-leave-to {
+  opacity: 0;
+}
+
+.sb-slide-left-enter,
+.sb-slide-left-leave-to {
+  transform: translateX(-100%);
+}
+
+.sb-slide-right-enter,
+.sb-slide-right-leave-to {
+  transform: translateX(100%);
+}
+
+.sb-slide-up-enter,
+.sb-slide-up-leave-to {
+  transform: translateY(-100%);
+}
+
+.sb-slide-down-enter,
+.sb-slide-down-leave-to {
+  transform: translateY(100%);
+}

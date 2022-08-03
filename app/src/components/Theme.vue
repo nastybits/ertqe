@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="themes">
-      <div class="theme">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/bg_blk.jpg')})` }">
+      <div class="theme" :class="{active: active === 'zoe', fade: active !== null && active !== 'zoe'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/zoe.jpg')})` }" @click="active = 'zoe'">
           <h2 class="theme__title">
             <small>Set</small>
-            <span>Megan</span>
+            <span>Zoe</span>
             <small>as site theme</small>
           </h2>
         </div>
       </div>
-      <div class="theme">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/bg.jpg')})` }">
+      <div class="theme" :class="{active: active === 'alisa', fade: active !== null && active !== 'alisa'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/alisa.jpg')})` }" @click="active = 'alisa'">
           <h2 class="theme__title">
             <small>Set</small>
             <span>Alisa</span>
@@ -19,8 +19,8 @@
           </h2>
         </div>
       </div>
-      <div class="theme">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/bg_4.jpg')})` }">
+      <div class="theme" :class="{active: active === 'candice', fade: active !== null && active !== 'candice'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/candice.jpg')})` }" @click="active = 'candice'">
           <h2 class="theme__title">
             <small>Set</small>
             <span>Candice</span>
@@ -28,8 +28,8 @@
           </h2>
         </div>
       </div>
-      <div class="theme">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/bg_3.jpg')})` }">
+      <div class="theme" :class="{active: active === 'hailey', fade: active !== null && active !== 'hailey'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/hailey.jpg')})` }" @click="active = 'hailey'">
           <h2 class="theme__title">
             <small>Set</small>
             <span>Hailey</span>
@@ -43,13 +43,26 @@
 
 <script>
 export default {
-  name: "Theme"
+  name: "Theme",
+  data() {
+    return {
+      active: null
+    }
+  },
+  watch: {
+    active() {
+      setTimeout(() => {
+        this.$emit('select', this.active)
+      }, 1100)
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .themes {
   display: flex;
+  justify-content: flex-start;
   font-family: Montserrat, sans-serif;
   width: 100%;
   height: 100vh;
@@ -77,8 +90,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 170%;
-  height: 110%;
+  width: 165%;
+  height: 100%;
   transform: skewX(20deg);
   background-position: 50%;
   background-repeat: no-repeat;
@@ -138,5 +151,39 @@ export default {
 
 .theme:hover .theme__title {
   opacity: 1;
+}
+
+.theme.active {
+  width: 100%;
+  transform: skewX(0);
+  margin: 0;
+  cursor: default;
+  transition: 1s;
+}
+
+.theme.active .theme__title {
+  opacity: 0;
+}
+
+.theme.active .theme__body {
+  width: 100%;
+  height: 100%;
+  transform: skewX(0);
+  filter: grayscale(0) blur(0);
+  background-position: center;
+  transition: 1s;
+}
+
+.theme.fade {
+  width: 0;
+  margin: 0;
+  padding: 0;
+  transform: skewX(0);
+  transition: 1s;
+}
+
+.theme.fade .theme__body {
+  transform: skewX(0);
+  transition: 1s;
 }
 </style>

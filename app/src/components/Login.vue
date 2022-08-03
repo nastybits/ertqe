@@ -1,10 +1,7 @@
 <template>
-  <div class="overlay" :class="{'theme-black': themeBlack}" @click="themeBlack = !themeBlack">
+  <div class="overlay">
     <blur-box
-        class="login"
-        :bg="themeBlack ? 'img/bg_blk.jpg' : 'img/bg.jpg'"
-        :bgBlured="themeBlack ? 'img/bg_blk_blr.jpg' : 'img/bg_blr.jpg'"
-    >
+        class="login" :bg="`img/${theme}.jpg`">
         <div class="login__header">Erotique</div>
         <div class="login__body">
           <div class="login__form">
@@ -25,9 +22,10 @@ export default {
   components: {
     BlurBox
   },
-  data() {
-    return {
-      themeBlack: false
+  props: {
+    theme: {
+      type: String,
+      required: true
     }
   }
 }
@@ -45,13 +43,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  // background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(200, 200, 200) 100%);
-  background: url("~@/assets/img/bg.jpg") no-repeat center;
-}
-
-.overlay.theme-black {
-  // background: linear-gradient(180deg, rgb(100, 100, 100) 0%, rgb(0, 0, 0) 100%);
-  background: url("~@/assets/img/bg_blk.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .overlay__container {
@@ -74,11 +66,6 @@ export default {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
   color: #333;
   overflow: hidden;
-}
-
-.theme-black .login {
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
-  color: #ccc;
 }
 
 .login__header,
