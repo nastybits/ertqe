@@ -1,10 +1,11 @@
 <template>
   <div class="overlay" :class="{'theme-black': themeBlack}" @click="themeBlack = !themeBlack">
-    <div class="login">
-        <div class="login__bg"></div>
-        <div class="login__header">
-          Erotique
-        </div>
+    <blur-box
+        class="login"
+        :bg="themeBlack ? 'img/bg_blk.jpg' : 'img/bg.jpg'"
+        :bgBlured="themeBlack ? 'img/bg_blk_blr.jpg' : 'img/bg_blr.jpg'"
+    >
+        <div class="login__header">Erotique</div>
         <div class="login__body">
           <div class="login__form">
             <input id="login" placeholder="login"/>
@@ -12,13 +13,18 @@
             <button>Enter</button>
           </div>
         </div>
-      </div>
+      </blur-box>
   </div>
 </template>
 
 <script>
+import BlurBox from "@/components/BlurBox";
+
 export default {
   name: 'HelloWorld',
+  components: {
+    BlurBox
+  },
   data() {
     return {
       themeBlack: false
@@ -39,11 +45,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("~@/assets/img/bg2.jpg") no-repeat center;
+  // background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(200, 200, 200) 100%);
+  background: url("~@/assets/img/bg.jpg") no-repeat center;
 }
 
 .overlay.theme-black {
-  background: url("~@/assets/img/bg_black.jpg") no-repeat center;
+  // background: linear-gradient(180deg, rgb(100, 100, 100) 0%, rgb(0, 0, 0) 100%);
+  background: url("~@/assets/img/bg_blk.jpg") no-repeat center;
 }
 
 .overlay__container {
@@ -58,44 +66,19 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  height: 85vh;
+  width: 450px;
+  height: 70vh;
   font-family: Montserrat, sans-serif;
   font-weight: 400;
   border-radius: 10px;
-  background: url("~@/assets/img/bg2_blured.jpg") no-repeat center;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
   color: #333;
+  overflow: hidden;
 }
 
 .theme-black .login {
-  background: url("~@/assets/img/bg_black_blured.jpg") no-repeat center;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
   color: #ccc;
-}
-
-.login__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  background: url("~@/assets/img/bg2.jpg") no-repeat center;
-  box-sizing: border-box;
-  z-index: 0;
-  opacity: 1;
-  transition: 1s;
-  filter: blur(7px);
-}
-
-.theme-black .login__bg {
-  background: url("~@/assets/img/bg_black.jpg") no-repeat center;
-}
-
-.login:hover .login__bg {
-  filter: blur(20px);
 }
 
 .login__header,
