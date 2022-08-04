@@ -1,7 +1,7 @@
 <template>
   <div class="overlay">
     <blur-box
-        class="login" :bg="`img/${theme}.png`">
+        class="login" :bg="`img/${theme}_blr.png`">
         <div class="login__header">Erotique</div>
         <div class="login__body">
           <div class="login__form">
@@ -56,15 +56,14 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 450px;
+  width: 650px;
   height: 70vh;
   font-family: Montserrat, sans-serif;
-  font-weight: 400;
   border-radius: 10px;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
-  color: #333;
+  box-shadow: 0 0 5px 5px rgba(51, 51, 51, 0.2);
+  color: #fff;
   overflow: hidden;
 }
 
@@ -78,7 +77,8 @@ export default {
 
 .login__header {
   height: 200px;
-  font-size: 46px;
+  font-size: 76px;
+  font-weight: 600;
   line-height: 200px;
 }
 .login__body {
@@ -100,7 +100,7 @@ export default {
   width: 100%;
   border: none;
   background: transparent;
-  border-bottom: 1px solid rgba(0,0,0,.66);
+  border-bottom: 1px solid rgba(255,255,255,.85);
   box-sizing: border-box;
   font-size: 24px;
   padding: 15px 10px;
@@ -110,20 +110,18 @@ export default {
   font-weight: 400;
 }
 
-.theme-black .login__form input {
-  border-bottom: 1px solid rgba(255,255,255,.66);
-}
-
 .login__form input[placeholder] {
-  opacity: .66;
+  opacity: 1;
   color: inherit;
+  font-weight: 600;
+  text-align: center;
 }
 
 .login__form button {
   border: none;
   font-size: 30px;
   font-family: Montserrat, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   background: transparent;
   cursor: pointer;
   opacity: .66;

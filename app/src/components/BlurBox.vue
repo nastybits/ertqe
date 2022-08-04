@@ -29,7 +29,7 @@ export default {
       return require('@/assets/' + this.bg)
     },
     width() {
-      return document.documentElement.clientWidth + "px"
+      return document.documentElement.clientWidth + 50 + "px"
     }
   }
 }
@@ -55,7 +55,7 @@ export default {
   z-index: 0;
   opacity: 1;
   transition: 1s;
-  filter: blur(7px);
+  //filter: blur(20px);
   background-position: center;
 }
 

@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="themes">
-      <div class="theme gradient-LtoD" :class="{active: active === 'zoe', fade: active !== null && active !== 'zoe'}">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/hannah.png')})` }" @click="active = 'zoe'">
+      <div class="theme gradient-LtoD" :class="{active: active === 'hannah', fade: active !== null && active !== 'hannah'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/hannah.png')})` }" @click="active = 'hannah'">
           <h2 class="theme__title">
             <small>Set</small>
             <span>Hannah</span>
@@ -78,6 +78,7 @@ export default {
   height: 100vh;
   width: 30%;
   font-size: 46px;
+  font-weight: 700;
   cursor: pointer;
   transform: skewX(-20deg);
   overflow: hidden;
