@@ -1,7 +1,7 @@
 <template>
   <div class="overlay">
     <blur-box
-        class="login" :bg="`img/${theme}.jpg`">
+        class="login" :bg="`img/${theme}.png`">
         <div class="login__header">Erotique</div>
         <div class="login__body">
           <div class="login__form">

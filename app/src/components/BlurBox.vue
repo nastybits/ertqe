@@ -1,6 +1,6 @@
 <template>
-  <div class="blur-box" :style="{ background: backgroundBlured ? `url(${backgroundBlured}) no-repeat ${position}` : `none`}">
-    <div class="blur-box__bg" :style="{ background: `url(${background}) no-repeat ${position}`}"></div>
+  <div class="blur-box">
+    <div class="blur-box__bg" :style="{ backgroundImage: `url(${background})`, backgroundSize:  width}"></div>
     <div class="blur-box__body">
       <slot></slot>
     </div>
@@ -28,8 +28,8 @@ export default {
     background() {
       return require('@/assets/' + this.bg)
     },
-    backgroundBlured() {
-      return this.bgBlured ? require('@/assets/' + this.bgBlured) : null
+    width() {
+      return document.documentElement.clientWidth + "px"
     }
   }
 }
@@ -37,8 +37,8 @@ export default {
 
 <style scoped lang="scss">
 .blur-box {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
   overflow: hidden;
 }
@@ -56,6 +56,7 @@ export default {
   opacity: 1;
   transition: 1s;
   filter: blur(7px);
+  background-position: center;
 }
 
 .blur-box:hover .blur-box__bg {

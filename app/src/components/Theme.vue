@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="themes">
-      <div class="theme" :class="{active: active === 'zoe', fade: active !== null && active !== 'zoe'}">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/zoe.jpg')})` }" @click="active = 'zoe'">
+      <div class="theme" :class="{active: active === 'tasha', fade: active !== null && active !== 'tasha'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/tasha.png')})` }" @click="active = 'tasha'">
           <h2 class="theme__title">
             <small>Set</small>
-            <span>Zoe</span>
+            <span>Tasha</span>
             <small>as site theme</small>
           </h2>
         </div>
       </div>
       <div class="theme" :class="{active: active === 'alisa', fade: active !== null && active !== 'alisa'}">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/alisa.jpg')})` }" @click="active = 'alisa'">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/alisa.png')})` }" @click="active = 'alisa'">
           <h2 class="theme__title">
             <small>Set</small>
             <span>Alisa</span>
@@ -19,20 +19,20 @@
           </h2>
         </div>
       </div>
-      <div class="theme" :class="{active: active === 'candice', fade: active !== null && active !== 'candice'}">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/candice.jpg')})` }" @click="active = 'candice'">
+      <div class="theme" :class="{active: active === 'natali', fade: active !== null && active !== 'natali'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/natali.png')})` }" @click="active = 'natali'">
           <h2 class="theme__title">
             <small>Set</small>
-            <span>Candice</span>
+            <span>Natali</span>
             <small>as site theme</small>
           </h2>
         </div>
       </div>
-      <div class="theme" :class="{active: active === 'hailey', fade: active !== null && active !== 'hailey'}">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/hailey.jpg')})` }" @click="active = 'hailey'">
+      <div class="theme" :class="{active: active === 'carisha', fade: active !== null && active !== 'carisha'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/carisha.png')})` }" @click="active = 'carisha'">
           <h2 class="theme__title">
             <small>Set</small>
-            <span>Hailey</span>
+            <span>Carisha</span>
             <small>as site theme</small>
           </h2>
         </div>
