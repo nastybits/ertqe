@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="themes">
-      <div class="theme" :class="{active: active === 'tasha', fade: active !== null && active !== 'tasha'}">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/tasha.png')})` }" @click="active = 'tasha'">
+      <div class="theme gradient-LtoD" :class="{active: active === 'zoe', fade: active !== null && active !== 'zoe'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/hannah.png')})` }" @click="active = 'zoe'">
           <h2 class="theme__title">
             <small>Set</small>
-            <span>Tasha</span>
+            <span>Hannah</span>
             <small>as site theme</small>
           </h2>
         </div>
       </div>
-      <div class="theme" :class="{active: active === 'alisa', fade: active !== null && active !== 'alisa'}">
+      <div class="theme gradient-DtoL" :class="{active: active === 'alisa', fade: active !== null && active !== 'alisa'}">
         <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/alisa.png')})` }" @click="active = 'alisa'">
           <h2 class="theme__title">
             <small>Set</small>
@@ -19,20 +19,20 @@
           </h2>
         </div>
       </div>
-      <div class="theme" :class="{active: active === 'natali', fade: active !== null && active !== 'natali'}">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/natali.png')})` }" @click="active = 'natali'">
+      <div class="theme gradient-LtoD" :class="{active: active === 'tyra', fade: active !== null && active !== 'tyra'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/tyra.png')})` }" @click="active = 'tyra'">
           <h2 class="theme__title">
             <small>Set</small>
-            <span>Natali</span>
+            <span>Tyra</span>
             <small>as site theme</small>
           </h2>
         </div>
       </div>
-      <div class="theme" :class="{active: active === 'carisha', fade: active !== null && active !== 'carisha'}">
-        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/carisha.png')})` }" @click="active = 'carisha'">
+      <div class="theme gradient-DtoL" :class="{active: active === 'emily', fade: active !== null && active !== 'emily'}">
+        <div class="theme__body" :style="{backgroundImage: `url(${require('@/assets/img/emily.png')})` }" @click="active = 'emily'">
           <h2 class="theme__title">
             <small>Set</small>
-            <span>Carisha</span>
+            <span>Emily</span>
             <small>as site theme</small>
           </h2>
         </div>
@@ -83,6 +83,8 @@ export default {
   overflow: hidden;
   box-sizing: border-box;
   transition: .7s;
+  background: #333;
+  margin-left: -1px;
 }
 
 .theme__body {
@@ -106,7 +108,7 @@ export default {
   transition: 1s;
   line-height: 1;
   width: 100%;
-  background: rgba(0,0,0,.33);
+  background: rgba(0,0,0,.5);
   padding: 10px 0;
   color: white;
 }
@@ -185,5 +187,15 @@ export default {
 .theme.fade .theme__body {
   transform: skewX(0);
   transition: 1s;
+}
+
+.gradient-LtoD {
+  background: url("~@/assets/img/bg_dtol.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gradient-DtoL {
+  background: url("~@/assets/img/bg_ltod.jpg") no-repeat center;
+  background-size: cover;
 }
 </style>
