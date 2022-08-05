@@ -29,7 +29,7 @@ export default {
       return require('@/assets/' + this.bg)
     },
     width() {
-      return document.documentElement.clientWidth + 50 + "px"
+      return document.documentElement.clientWidth + 10 + "px"
     }
   }
 }

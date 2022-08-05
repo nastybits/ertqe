@@ -1,8 +1,13 @@
 <template>
   <div class="overlay">
     <blur-box
-        class="login" :bg="`img/${theme}_blr.png`">
-        <div class="login__header">Erotique</div>
+        class="login" :bg="`img/${theme}.png`">
+        <div class="login__header">
+          <div class="login__title">
+            Erotique
+            <small>feat. {{ theme }}</small>
+          </div>
+        </div>
         <div class="login__body">
           <div class="login__form">
             <input id="login" placeholder="login"/>
@@ -79,8 +84,17 @@ export default {
   height: 200px;
   font-size: 76px;
   font-weight: 600;
-  line-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.login__title {}
+.login__title small {
+  display: block;
+  font-size: 18px;
+}
+
 .login__body {
   display: flex;
   flex-direction: column;

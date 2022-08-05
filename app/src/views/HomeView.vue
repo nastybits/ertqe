@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Theme @select="setTheme"/>
+    <Themes @select="setTheme"/>
     <transition name="sb-fade" appear>
       <Login v-if="theme" :theme="theme"/>
     </transition>
@@ -17,7 +17,7 @@ export default {
     }
   },
   components: {
-    Theme: () => import('@/components/Theme.vue'),
+    Themes: () => import('@/components/Themes.vue'),
     Login: () => import('@/components/Login.vue')
   },
   methods: {
